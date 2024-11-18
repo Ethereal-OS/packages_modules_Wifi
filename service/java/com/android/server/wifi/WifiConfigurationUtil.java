@@ -78,6 +78,7 @@ public class WifiConfigurationUtil {
     private static final int PSK_SAE_HEX_LEN = 64;
     private static final int WEP104_KEY_BYTES_LEN = 13;
     private static final int WEP40_KEY_BYTES_LEN = 5;
+    private static final int MAX_STRING_LENGTH = 512;
 
     @VisibleForTesting
     public static final String PASSWORD_MASK = "*";
