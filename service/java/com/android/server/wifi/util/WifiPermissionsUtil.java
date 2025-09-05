@@ -269,6 +269,9 @@ public class WifiPermissionsUtil {
         PackageManager pm = mContext.getPackageManager();
         long ident = Binder.clearCallingIdentity();
         try {
+            if (SdkLevel.isAtLeastT() && Process.isSdkSandboxUid(uid)) {
+                return;
+            }        
             PackageInfo pkgInfo = pm.getPackageInfo(packageName,
                     GET_PERMISSIONS | MATCH_UNINSTALLED_PACKAGES);
             int requestedPermissionsLength = pkgInfo.requestedPermissions == null
